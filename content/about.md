@@ -23,8 +23,8 @@ Products
 
 We make over 200 shapes, the most popular of these include:
 
-Shape,  Design, Description, Links
-Line , --,  Two pointy ends and a straight stretch of ink, Line on wikipedia - https://en.wikipedia.org/wiki/Line_(geometry)
+Shape,  Design, Description, Links, Line,  
+Two pointy ends and a straight stretch of ink, Line on wikipedia - https://en.wikipedia.org/wiki/Line_(geometry)
 Circle,  -- , A full round with no corners, Circle on wikipedia - https://en.wikipedia.org/wiki/Circle
 Triangle,  -- , Three lines with three corners,  Triangle on wikipedia - https://en.wikipedia.org/wiki/Triangle
 
