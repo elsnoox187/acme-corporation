@@ -32,3 +32,10 @@ params:                                       # Theme specific parameters
       recentCount: 7
     - title: Contact Us
       contact: true
+markup:                                 # Settings for markup
+  goldmark:                             # The default Hugo Markdown engine
+    renderer:                           # Settings for markdown rendering
+      unsafe: true                      # Enable 'unsafe' inline HTML
+  highlight:                            # Options for code highlighting
+    lineNos: true                       # Enable line numbers
+enableEmoji: true                       # Enable emoticons
