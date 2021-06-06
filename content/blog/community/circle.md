@@ -9,7 +9,7 @@ A circle may also be defined as a special kind of ellipse in which the two foci 
 * **Annulus** a ring-shaped object, the region bounded by two concentric circles.
 * **Arc** any connected part of a circle. Specifying two end points of an arc and a center allows for two arcs that together make up a full circle.
 * **Centre** the point equidistant from all points on the circle.
-* **Chord** a line segment whose endpoints lie on the circle, thus dividing a circle in twosegments .
+* **Chord** a line segment whose endpoints lie on the circle, thus dividing a circle in two segments.
 * **Circumference** the length of one circuit along the circle, or the distance around the circle.
 * **Diameter** a line segment whose endpoints lie on the circle and that passes through the centre; or the length of such a line segment. This is the largest distance between any two points on the circle. It is a special case of a chord, namely the longest chord for a given circle, and its length is twice the length of a radius.
 * **Disc** the region of the plane bounded by a circle.
