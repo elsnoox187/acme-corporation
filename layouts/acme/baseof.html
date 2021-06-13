@@ -2,34 +2,37 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="/index.css">
-    {{with (default site.Title .Page.Title)}}<title>{{.}}</title>{{end}}
-    {{with .Page.Description}}
-    <meta name="description" content="{{.}}" />{{end}}
+  {{ $css := resources.Match "*.css.tpl" | resources.Concat "index.css" | resources.ExecuteAsTemplate "index.css" . | resources.Minify }}
+  <link rel="stylesheet" type="text/css" href="{{$css.Permalink}}">
+  {{with (default site.Title .Page.Title)}}<title>{{.}}</title>{{end}}
+  {{with .Page.Description}}
+  <meta name="description" content="{{.}}" />{{end}}
 </head>
 
 <body class="{{block "bodyClass" .}}page{{end}}">
-    {{block "header" .}}
-    <header>
-        <a href="/"><img src="/image/logo.svg" width="60px"></a>
-        {{ partialCached "menu.html" (dict "Menu" site.Menus.main  "RenderSubmenus" true) "main" "true" }}
-    </header>
-    {{ end }}
-    {{block "body" .}}
+  {{block "header" .}}
+  <header>
+    {{ $logo := resources.GetMatch "image/logo.svg.tpl" | resources.ExecuteAsTemplate "logo.svg" . }}
+
+    <a href="{{site.BaseURL}}"><img src="{{$logo.Permalink}}" width="60px"></a>
+    {{ partialCached "menu.html" (dict "Menu" site.Menus.main  "RenderSubmenus" true) "main" "true" }}
+  </header>
+  {{ end }}
+  {{block "body" .}}
     <section>
-        <main>
-            {{with .Page.Title}}<h1>{{.}}</h1>{{end}}
-            {{.Content}}
-        </main>
+      <main>
+        {{with .Page.Title}}<h1>{{.}}</h1>{{end}}
+        {{.Content}}
+      </main>
     </section>
-    {{end}}
-    {{block "footer" .}}
-    <footer>
-        {{ partialCached "menu.html" (dict "Menu" site.Menus.footer  "RenderSubmenus" false) "footer" "false"}}
-        <br>
-        {{.Param "copyright" | markdownify}}
-    </footer>
-    {{ end }}
+  {{end}}
+  {{block "footer" .}}
+  <footer>
+    {{ partialCached "menu.html" (dict "Menu" site.Menus.footer  "RenderSubmenus" false) "footer" "false"}}
+    <br>
+    {{.Param "copyright" | markdownify}}
+  </footer>
+  {{ end }}
 </body>
 
 </html>
